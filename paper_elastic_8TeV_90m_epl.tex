@@ -1,0 +1,201 @@
+\documentclass[doublecol]{epl/epl2} 
+% or \documentclass[page-classic]{epl2} for one column style
+
+\usepackage{enumitem}
+
+\def\d{{\rm d}}
+\def\un#1{\,{\rm #1}}
+\def\ung#1{\quad[{\rm #1}]}
+\def\unt#1{[{\rm #1}]}
+\def\e{{\rm e}}
+\def\text#1{\hbox{#1}}
+
+\setbox123\hbox{\small$0$}
+\def\S{\hbox to\wd123{\hss}}
+\setbox124\hbox{\small$_{0}$}
+\def\s{\hbox to\wd124{\hss}}
+
+%----------------------------------------------------------------------------------------------------
+
+\title{Characterisation of the dip-bump structure observed in proton-proton elastic scattering at $\sqrt s$ = 8\,TeV}
+\shorttitle{Characterisation of the dip-bump structure observed in proton-proton elastic scattering at $\sqrt s$ = 8\,TeV}
+
+\input authorlist
+
+\pacs{13.60.Hb}{Total and inclusive cross-sections (including deep-inelastic processes)}
+
+\abstract{%
+SPACEHOLDER\\
+TODO\\
+TODO\\
+TODO\\
+TODO\\
+TODO\\
+TODO\\
+TODO\\
+TODO
+}
+
+
+
+%----------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+
+%----------------------------------------------------------------------------------------------------
+\section{Introduction}
+\label{s:introduction}
+
+TODO: physics introduction.
+
+This article presents an extension of a previous TOTEM analysis \cite{totem-8tev-90m} to larger values of $|t|$, thus based on the same dataset obtained with identical experimental setup and LHC optics.
+
+The experimental apparatus consisted of two units of Roman Pot (RP) detectors in each arm of the experiment (the LHC sector 45 and 56). The Roman Pots are movable beam-pipe insertions that allowed to approach 10 layers of silicon strip sensors very close to the beam, in order to detect protons scattered to small angles.
+%TODO: diagonals
+
+A special LHC optics with the betatron function in the interaction point of $\beta^* = 90\un{m}$ was used. This provided small beam divergence and thus good $|t|$ resolution, as well as large vertical effective length yielding good acceptance at low $|t|$.
+
+The data were collected in July 2012 in the LHC fill number 2836 where the RPs were inserted at a distance of $9.5$ times the transverse size of the beam, $\sigma_{\rm beam}$. The main trigger required a coincidence between the RPs in both arms. During the about $11\un{h}$ long data-taking, a luminosity of about $735\un{\mu b^{-1}}$ was accumulated.
+
+
+
+%----------------------------------------------------------------------------------------------------
+\section{Differential cross-section}
+\label{s:dsdt}
+
+The analysis procedure is almost identical to the one published in Ref.~\cite{totem-8tev-90m}. Below a brief overview is given, for details the reader is referred to the original publication.
+
+For a given $t$ bin, the differential cross-section is evaluated by selecting and counting elastic events:
+\begin{equation}
+	{\d\sigma\over \d t}(\hbox{bin}) =
+		{\cal N}\: {\cal U}(t)\: {\cal B} \: 
+		\frac{1}{\Delta t}
+                \sum\limits_{t\, \in\, \text{bin}} {\cal A}(t, t_y)\: {\cal E}(t_y) \: ,
+\end{equation}
+where $\Delta t$ is the width of the bin, ${\cal N}$ is a normalisation factor, 
+and the other symbols stand for various correction factors:
+${\cal U}$ for unfolding of resolution effects, ${\cal B}$ for background subtraction, ${\cal A}$ for acceptance correction and ${\cal E}$ for detection and reconstruction efficiency. $t_y$ represents the component of the four-momentum transfer squared related to the vertical scattering angle, relevant for some of the corrections.
+
+The candidate events are tagged with cuts that enforce the elastic-event kinematics: two anti-collinear protons (one in each arm of the experiment) emerging from the same vertex. In addition, the optics-imposed correlation between the vertical track position and angle at the RPs is required. All the cuts are applied at $4\un{\sigma}$ level where Monte Carlo studies indicate a tolerable loss of about $0.1\un{\%}$ events.
+
+The background, i.e.~non-elastic events passing the tagging cuts, is studied with two complementary methods. The first is based on distributions of the tagging-cut discriminators -- the tails only contain background which can be interpolated to the signal region. The shape for interpolation is indicated by the data from anti-diagonal configurations which cannot contain any elastic signal but where the background is expected similar. This expectation is confirmed by the good agreement at the distribution tails. This procedure yields a background estimate of $1 - {\cal B} < 10^{-4}$.
+
+The acceptance correction, ${\cal A}$, receives two contribution. The ``geometrical'' correction reflects the fraction of events with the given value of $|t|$ that fall within the geometrical acceptance of the sensors. The second contribution corrects for fluctuations around the sensor edges mainly due to the beam divergence.
+
+The normalisation, ${\cal N}$, is determined by requiring the same cross-section integral between $|t| = 0.027$ and $0.083\un{GeV^2}$ as for dataset 1 from Ref.~\cite{totem-8tev-tot1}, where the luminosity-independent calibration was applied.
+
+Since the normalisation is determined from another dataset, in the present analysis it is sufficient to consider only inefficiency effects, ${\cal E}$, that may modify the $t$-distribution shape. These are related to the inability of a RP to resolve the elastic proton track and are studied in two groups. The first group corresponds to a case where a single RP cannot reconstruct the proton track. Such inefficiencies are evaluated by removing the RP from the tagging cuts, repeating the selection and calculating the fraction of events recovered. The second group corresponds to the case where multiple RPs in the same arm cannot reconstruct the proton track, which typically come from showers initiated in the upstream RP and affecting also the downstream one. The related inefficiency is studied by examining the rate of events with high track multiplicity.
+
+The scattering-angle resolution is studied by comparing the protons in the two experiment arms. For elastic events the angles should be identical, fluctuations arise due to the beam divergence and partly due to the finite RP sensor resolution. The scattering-angle resolution was found to deteriorate slightly with time, at a rate compatible with the beam emittance growth.
+
+Due to more rich structure of the differential cross-section of the full $|t|$ range, the unfolding of resolution effects is more complex than in Ref.~\cite{totem-8tev-90m}. Consequently, an alternative determination is used besides the original method. The original method (denoted ``CF'') consists of fitting the observed $t$-distribution by a smooth curve which serves as an input to a Monte Carlo simulation. That is performed once with and once without simulating the scattering-angle resolution. The ratio of the output histograms gives a set of per-bin corrections factors. Applying them to the yet uncorrected differential cross-section yields a better estimate of the true $t$-distribution and serves as an input to the next iteration. The iterations stop when the difference between the input and output $t$-distributions is negligible, typically after two iterations. The alternative method performs a regularised resolution-matrix inversion (denoted ``RRMI''), adapted from chapter~11 in Ref.~\cite{Cowan2002}. The regularisation is needed since the inverted resolution matrix tends to over-amplify statistical fluctuations. It is implemented via minimisation of $\chi^2$ which receives two contributions: one corresponding to the exact resolution-matrix inversion and one proportional to the integral of ${\d^2\over \d |t|^2} \log {\d\sigma\over \d t}$ over the full $|t|$ range. A result comparison is given in Fig.~\ref{f:unfolding}, where the blue and red curves correspond to different parametrisation of the smoothing fit.
+
+\begin{figure}
+%\hbox{}\vskip-7mm
+\begin{center}
+\includegraphics{fig/unfolding_summary.pdf}
+\vskip-5mm
+\caption{Unfolding correction, ${\cal U}$, as a function of $|t|$. The different colours correspond to various determination techniques, see text.}
+\label{f:unfolding}
+\end{center}
+\end{figure}
+
+The considered systematic uncertainties include:
+\begin{itemize}[topsep=0pt,itemsep=-2pt]
+\item alignment: RP horizontal and vertical shifts, rotation about beam axis,
+\item optics calibration,
+\item acceptance correction: uncertainty of resolution parameters including left-right asymmetry and non-gaussianity,
+\item unceratainties of efficiency estimate,
+\item uncertainty of beam momentum \cite{beam-mom-unc},
+\item unfolding: method and fit dependence, uncertainty of resolution parameters including their full time variation,
+\item uncertainty of normalisation \cite{totem-8tev-tot1},
+\item difference between diagonals at high $|t|$.
+\end{itemize}
+The systematic uncertainties were propagated to the differential cross-section using a Monte-Carlo simulation. The correlations between the diagonals were taken into account. % TODO: leading effects??
+
+\input data_table.tex
+
+The final differential cross-section with related uncertainties is presented in Tab.~\ref{t:dsdt} and plotted in Fig.~\ref{f:dsdt}.
+
+\begin{figure*}
+\begin{center}
+\includegraphics{fig/t_dist_tabulation.pdf}
+\vskip-5mm
+\caption{Differential cross-section from Tab.~\ref{t:dsdt}.}
+\label{f:dsdt}
+\end{center}
+\end{figure*}
+
+
+%----------------------------------------------------------------------------------------------------
+\section{Characterisation of the dip-bump structure}
+\label{s:dip-bump}
+
+The detail of the dip-bump structure is shown in Fig.~\ref{f:dip bump fits}. The blue curve shows a quadratic fit of the dip and yields the following position and cross-section value:
+\begin{equation}
+\label{e:t dip}
+|t|_{\rm dip} = (0.5230 \pm 0.0034^{\rm stat} \pm TODO^{\rm syst})\un{GeV^2}\ ,
+\end{equation}
+\begin{equation}
+\label{e:dsdt dip}
+\left.{\d\sigma\over\d t}\right|_{\rm dip} = (0.0145 \pm 0.0011^{\rm stat} \pm TODO^{\rm syst})\un{{mb\over GeV^2}}\ .
+\end{equation}
+The red curve corresponds to a quadratic fit in the bump region, yielding the following characteristics:
+\begin{equation}
+\label{e:t bump}
+|t|_{\rm bump} = (0.6907 \pm 0.0137^{\rm stat} \pm TODO^{\rm syst})\un{GeV^2}\ ,
+\end{equation}
+\begin{equation}
+\label{e:dsdt bump}
+\left.{\d\sigma\over\d t}\right|_{\rm bump} = (0.0292 \pm 0.0011^{\rm stat} \pm TODO^{\rm syst})\un{{mb\over GeV^2}}\ .
+\end{equation}
+
+From the parameters above one can derive the cross-section ratio in the bump and dip:
+\begin{equation}
+\label{e:R}
+R \equiv {{\d\sigma/\d t}|_{\rm bump} \over {\d\sigma/\d t}|_{\rm dip}} = (2.016 \pm 0.177^{\rm stat} \pm TODO^{\rm syst})\ .
+\end{equation}
+
+
+\begin{figure}
+%\hbox{}\vskip-7mm
+\begin{center}
+\includegraphics{fig/dip_bump_fits.pdf}
+\vskip-5mm
+\caption{Zoom of the differential cross-section (black points) at the dip-bump region. The blue and red correspond to quadratic fits of the dip and bump, respectivelly.}
+\label{f:dip bump fits}
+\end{center}
+\end{figure}
+
+
+%----------------------------------------------------------------------------------------------------
+\section{Summary and outlook}
+\label{s:summary}
+
+TODO
+
+
+%----------------------------------------------------------------------------------------------------
+\section{Acknowledgments}
+
+SPACEHOLDER ONLY: This work was supported by the institutions listed on the front page and also by the Magnus Ehrnrooth foundation (Finland), the Waldemar von Frenckell foundation (Finland), the Academy of Finland, the Finnish Academy of Science and Letters (The Vilho, Yrj\"o and Kalle V\"ais\"al\"a Fund), the OTKA NK 101438 and the EFOP-3.6.1-16-2016-00001 grants (Hungary). Individuals have received support from Nylands nation vid Helsingfors universitet (Finland), from the M\v SMT \v CR (Czech Republic) and the J\'anos Bolyai Research Scholarship of the Hungarian Academy of Sciences and the NKP-17-4 New National Excellence Program of the Hungarian Ministry of Human Capacities.
+
+
+%----------------------------------------------------------------------------------------------------
+\bibliographystyle{h-elsevier.bst}
+\bibliography{bibliography}
+
+\iffalse
+\begin{thebibliography}{99}
+
+\bibitem{epl95}
+    %Proton-proton elastic scattering at the LHC energy of \sqrt{s} = 7 TeV, Europhys. Lett. 95 (2011) 41001,CERN-PH-EP-2011-101 
+	\Name{Antchev G.~\etal{}~(TOTEM Collaboration)}
+	\REVIEW{Europhys.~Lett.}{95}{2011}{41001}
+
+\end{thebibliography}
+\fi
+
+\end{document}

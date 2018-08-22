@@ -1,0 +1,10 @@
+*.swp
+
+*.pdf
+*.log
+*.aux
+*.bbl
+*.blg
+
+.*
+!.gitignore
